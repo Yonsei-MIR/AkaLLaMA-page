@@ -155,3 +155,13 @@ body {
 #interpolation-image-wrapper img {
   border-radius: 5px;
 }
+
+
+.chat-history {
+  flex-grow: 1;
+  overflow-y: auto;
+  /* overflow-x: hidden; */
+  padding: 5px;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 5px;
+}
