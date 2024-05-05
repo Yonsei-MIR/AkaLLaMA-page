@@ -249,16 +249,7 @@
         <!-- <h2 class="title is-3">Abstract</h2> -->
         <div class="content has-text-justified">
           <p>
-            Our approach augments neural radiance fields
-            (NeRF) by optimizing an
-            additional continuous volumetric deformation field that warps each observed point into a
-            canonical 5D NeRF.
-            We observe that these NeRF-like deformation fields are prone to local minima, and
-            propose a coarse-to-fine optimization method for coordinate-based models that allows for
-            more robust optimization.
-            By adapting principles from geometry processing and physical simulation to NeRF-like
-            models, we propose an elastic regularization of the deformation field that further
-            improves robustness.
+            AkaLlama is a series of Korean language models designed for practical usability across a wide range of tasks. The initial model, AkaLlama-v0.1, is a fine-tuned version of Meta-Llama-3-70b-Instruct. It has been trained on a custom mix of publicly available datasets curated by the MIR Lab. Our goal is to explore cost-effective ways to adapt high-performing LLMs for specific use cases, such as different languages (e.g., Korean) or domains (e.g., organization-specific chatbots).
           </p>
         </div>
       </div>
@@ -344,7 +335,7 @@
               <!-- <p><b>Description:</b> Monalisa is a famous painting by Leonardo da Vinci. </p> -->
       
               <div class="card-body" id="selected-question" style="display: flex; height: 80vh;">
-                <div class="chat-history format">
+                <div class="chat-history">
                   <!-- Add your chat messages here -->
                 </div>
       
@@ -444,9 +435,16 @@
 
   function addMessageToChatHistory(sender, message, imageSrc) {
     const chatHistory = document.querySelector('.chat-history');
+    
     const chatRow = createChatRow(sender, message, imageSrc);
     chatHistory.appendChild(chatRow);
     chatHistory.scrollTop = chatHistory.scrollHeight;
+
+    // formatting
+    // const lastMessageElement = chatRow.querySelector('.chat-history p');
+    // const messageHtml = lastMessageElement.innerHTML;
+    // const boldMessageHtml = messageHtml.replace(/(₩₩₩)/g, '<strong>$1</strong>');
+    // lastMessageElement.innerHTML = boldMessageHtml;
   }
 
   function clearChatHistory() {
@@ -455,7 +453,6 @@
   }
 
   // 
-
   const conversations = [
     {
       "description": "self introduce",
